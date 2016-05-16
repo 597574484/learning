@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>两列布局(左定宽，右自适应-inline-block)</title>
+	<style type = "text/css">
+	/**
+	 * [type description]
+	 * @type {String}
+	 * inline-block 布局 : 块间会有大约3-4px的缝隙，主要是因为标签间的space造成的 可以注释掉，不喜欢注释的话
+	 * 可以在container中设置font-size 为0。
+	 */
+		html {
+			font-size : 62.5%;
+		}
+		.container{ font-size : 0; -webkit-text-size-adjust : none;}
+		.left, .right{
+			font-size : 1.6rem;
+			height : 30rem;
+			display : inline-block;
+		}
+		.left{
+			background-color: red;
+			width : 20rem;
+			opacity: .2;
+		}
+		.right{
+			background-color : green;
+			width : calc(100% - 20rem);
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div class = "left"></div>
+		<div class = "right"></div>
+	</div>
+</body>
+</html>

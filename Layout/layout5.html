@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	header, footer{
+		width : 100%;
+		background-color: red;
+		line-height : 8rem;
+	}
+	.container:after{
+		content : '';
+		display: block;
+		clear: both;
+	}
+	.left, .right{
+		background-color : blue;
+		line-height : 10rem;
+		width : 20rem;
+	}
+	.left {
+		float : left;
+	}
+	.middle{
+		background-color : yellow;
+		word-wrap: break-word;
+		word-break: break-all;
+		height : 10rem;
+	}
+	.right{
+		float : right;
+	}
+</style>
+<body>
+	<header>head</header>
+	<div class = "container">
+		<div class = "left">left</div>
+		<div class = "right">right</div>
+		<div class = "middle">middledsadsadsadsdsadsdasdasdsadsdasdsa</div>
+			
+	</div>
+	<footer>footer</footer>
+</body>
+</html>
