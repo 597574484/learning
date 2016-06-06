@@ -71,5 +71,13 @@
  *
  * -------------------------------------------------------------------------------------------------
  *
- * 
- */
+ * 继承 :
+ * --1.原型链继承方法 : 缺点 ==> ①原型属性会被共享。②子类实例化的时候不能向父类的构造传递参数。
+ * --2.借用构造函数 :   基本思想 ==> 子类的构造内部调用超类型的构造，function Sub(n1, n2){Super.call(n1, n2);}
+ * 					    缺点 ==> 无法避免构造函数模式。
+ * --3.组合继承     :   基本思想 ==> 借用构造函数 + 原型链 ==> ①借用构造 : Super.call 如 ↑ ②原型链sub.prototype = new Super();
+ * --4.原型式继承   :   function(o){function F(){}; F.prototype = o; return new F();}
+ * --5.寄生式继承   :   function(o){var clone = Object(origin); clone.sayName = ()=>{}; return clone;}
+ * --6.寄生组合继承 :   基本思想 ==> (与组合不同点) 不必为了子类型的原型而调用父的构造。
+ *                      function(sub,sup){var prototype = Object(sup.prototype); prototype.constructor = sub; sub.prototype = prototype;}
+ */ 
