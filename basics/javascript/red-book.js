@@ -79,4 +79,41 @@
  * --5.寄生式继承   :   function(o){var clone = Object(origin); clone.sayName = ()=>{}; return clone;}
  * --6.寄生组合继承 :   基本思想 ==> (与组合不同点) 不必为了子类型的原型而调用父的构造。
  *                      function(sub,sup){var prototype = Object(sup.prototype); prototype.constructor = sub; sub.prototype = prototype;}
- */ 
+ *
+ *-------------------------------------------------------------------------------------------------
+ *
+ * 样式表 :
+ * CSSSyleSheet : 
+ * <link>  是 HTMLLinkElement 的实例
+ * <style> 是 HTMLStyleElement 的实例  
+ * 但是CSSStyleSheet(只读) 是表示样式表的类，而不会管这些样式表在文档中是如何定义的。
+ * 判断浏览器是否支持DOM2 : document.implementation.hasFeature("StyleSheets","2.0");
+ * -------------------------------------------------------------------------------------------------
+ *
+ * 元素大小 :
+ * 
+ * --1.偏移量:  offsetLeft, offsetTop     元素的左(上)外边框到 包含元素的左(上)内边框之间的像素距离。
+ * 				offsetHeight, offsetWidth 元素在竖直(水平)方向上占用的空间大小)，包括:高度，滚动条高度和边框
+ * 
+ * --2.客户区大小 : clientWidth, clientHeight : 内容 + 内边距
+ * --3.滚动大小   : scrollWidth, scrollHeight : 没滚动条 this==clientWidth，有滚动条则包括呗。:实际大小
+ * 					scrollLeft, scrollTop     : 被隐藏在内容区域左(上)方的像素数。
+ *
+ * -------------------------------------------------------------------------------------------------
+ *
+ * 事件类型 :
+ *
+ * --1.UI事件    ==> load(包括img > load)，resize、scroll 
+ * --2.焦点事件  ==> focus、blur、focusin、focusout
+ * --3.鼠标事件  ==> click、dbclick、mousedown、mouseup、mouseover、mousemove(click前提是连续触发mousedown、mouseup)
+ * --4.滚轮事件  ==> mousewheel
+ * --5.文本事件  ==> textInput(编辑区的输入按键才触发 ，data属性，inputMethod属性)
+ * --6.键盘事件  ==> keydown(任意键)、keypress(字符键)、keyup
+ * --7.合成事件  ==> IME输入，通常按住多个键，最终只会生成一个字符 compositionstart/update/end
+ * --8.变动事件  ==> DOM for XML
+ *
+ * --0.事件event 
+ * 		(1).位置 : clientX/Y、pageX/Y、screenX/Y
+ * 		(2).修改键 : keys : altKey、shiftKey、ctrlKey、metaKey...
+ * 		(3).键码 : keyCode : ←↑→↓(37-40) enter(13) shift-ctrl-alt(16-18) ESC(27)
+ */ 	
