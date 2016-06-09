@@ -137,7 +137,23 @@
  *
  * -------------------------------------------------------------------------------------------------
  *
- *  AJAX 和 Comet
- *
+ *  AJAX 和 Comet :
  *  
+ *  --1.XHR请求头 ==> Accept系
+ *                    Accept(浏览器能够处理的内容)、Accept-Charset/Encoding/Language (能显示的字符集、压缩编码、当前语言)
+ *                    Connection : 浏览器和服务器间的连接类型。
+ *                    Cookie     : 当前页面设置的任何cookie
+ *                    Host       : 发出请求的页面 所在的域
+ *                    Referer    : 发送请求的URI (HTTP规范的拼写错误)
+ *                    User-agent : 浏览器代理的字符串
+ *  --2.读取头 : setRequestHeader(), getResponseHeader()  PS : get中的名值对应该用encodeURIComponent编码再发送。
+ *
+ *
+ *  --3.跨域   : (1).自定义请求头 : 添加(Origin : url)属性，然后服务器通过设置(Access-Control-Allow-Origin : url) 表示允许。不会包含cookie。
+ *  			 (2).XDR 和 XHR : IE8通过XDR，其他通过原生XHR(绝对路径即可)(不能设置自定义头部，不能接发cookie，调用getAllReponseHeaders()总返回null).
+ *  			 (3).preflighted requests : 更多的自定义头部信息 浏览器:Origin + Access-Control-Request-Methods/Headers 服务器Access-Control-Allow-Origin/Methods/Headers
+ *  		  	 (4).带凭据的请求 : 设置Access-Control-Allow-Credentials : true
+ *  		  	 (5).图像ping : 动态创建图像(<img src= "url">) 得不到信息，但是可以通过load和error事件判断
+ *  		  	 (6).JSONP   :(JSON with padding),动态创建<script> 返回函数执行语句，须在环境中命名同名函数。
+ *  		  	 
  */ 	
