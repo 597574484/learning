@@ -116,4 +116,28 @@
  * 		(1).位置 : clientX/Y、pageX/Y、screenX/Y
  * 		(2).修改键 : keys : altKey、shiftKey、ctrlKey、metaKey...
  * 		(3).键码 : keyCode : ←↑→↓(37-40) enter(13) shift-ctrl-alt(16-18) ESC(27)
+ *
+ * --0.0.mobileDevice
+ *
+ *  -------------------------------------------------------------------------------------------------
+ *  
+ *  表单 :
+ *
+ * --0.form ==>HTMLFormElement，包括自身特性 = submit(true?) + method(get/post) + action(url)
+ * --1.取得表单 ==> document.forms['name'];(表单及表单项通过name引用)
+ * --2.提交表单 ==> 条件 = <input type = 'submit/image'> or <button>通过点击或聚焦时回车之后，触发submit事件，true?提交:不提
+ * --3.重复提交 ==> 解决 = 提交完之后禁用按钮 or onsubmit事件处理程序后续的表单操作。
+ * --4.重置表单 ==> 不要轻易重置表单   <input/button type = "reset"> 期间触发reset事件
+ * --5.表单字段 ==> 首选 : form.elements['name'] 访问element。获取值的话 :value，type，disabled....
+ * --6.共有属性 ==> 属性 : value,form(指向所属表单),disabled(禁用)，multiple,autofocus
+ * 					方法 : .focus(), .blur() 默认只有表单字段可以获得焦点，而其他元素可以通过tabIndex = -1 然后focus()
+ * 					事件 : blur,change(当input或textarea失去焦点且 内容改变的时候触发),focus
+ * --7.表序列化 ==> 表单字段名值对进行URL编码使用&分隔，不发送禁用的字段，只发送勾选的单选复选，不发送[type='reset']，
+ * 					多选为每个选中的值单独做个条目，提交按钮提交时，也发送提交按钮，<select>中option中有value发value，没它发innerText。
+ *
+ * -------------------------------------------------------------------------------------------------
+ *
+ *  AJAX 和 Comet
+ *
+ *  
  */ 	
