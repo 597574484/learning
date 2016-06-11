@@ -30,9 +30,9 @@
 	-伪元素选择器  ==> ["::first-letter","::before","::selection"]
 
 	-属性选择器    ==> {
-							"E[attr]"     : "匹配具有attr属性的E"，
-							"E[attr=val]" : "匹配attr属性值为val的E",
-							"E[attr|^~*&=val]" : "正则表达式"
+						  "E[attr]"     : "匹配具有attr属性的E"，
+						  "E[attr=val]" : "匹配attr属性值为val的E",
+						  "E[attr|^~*&=val]" : "正则表达式"
 	}
 ```
 
@@ -45,14 +45,11 @@
 
 ```
 	-border-image  ==>
-		border-image  : none | <image> [<number>|<percentage>]{1,4} [/
-					   <border-width>{1,4}] ?[stretch|repeat |round]{0,2} 
+		border-image  : none | <image> [<number>|<percentage>]{1,4} [/<border-width>{1,4}] ?[stretch|repeat |round]{0,2} 
 	-border-radius ==>			
 		border-radius : none | 	<length> {1,4} [/<length> {1,4}]
 	-box-shadow    ==> 
 		box-shadow : none | [<length><length><length>?<length>? ||<color>] [,<length><length><length>?<length>? ||<color>]+
-
-		`or`
 
 		box-shadow : none | [inset x-offset y-offset blur-radius spread-radius color],[inset x-offset y-offset blur-radius spread-radius color]+
 ```
