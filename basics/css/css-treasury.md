@@ -186,6 +186,38 @@ Text --> Color --> Box --> Flex --> Columns -->
 	-backface-visibility : visible || hidden 背面是否可见 
 ```
 
+##Examples
+
+```
+<style>
+      .wrap{
+        position : relative;
+        transform-style: preserve-3d;/*开启3D效果这个才是重点*/
+        perspective: 200px;/*这个只是设置视距，虽然影响最终效果但是不影响过程*/
+      }
+      .wrap img{
+        width : 40%;
+        background-color : red;
+        position : absolute;
+      }
+      .wrap img:first-of-type{
+        z-index : 3;
+        transition : all 5s ease-in-out;
+      }
+      #front:hover{
+        transform : rotate3d(.2, .4, .6, 360deg) translateZ(-100px)  skew(90deg) scale(1.5);
+        transform-origin : right bottom; /*过程改变，结果不变*/
+      }
+</style>
+<div class="wrap">
+     <img src="./images/transform-function.jpg" alt="" id="front" />
+     <img src="./images/transform-function.jpg" alt="" id="back" />
+</div>
+```
+[transform-example](./transform-example.html)
+
+##Transition
+
 
 
 [正则表达式](http://www.cnblogs.com/deerchao/archive/2006/08/24/zhengzhe30fengzhongjiaocheng.html)
