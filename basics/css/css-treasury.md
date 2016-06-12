@@ -2,12 +2,14 @@
 
 ## Selector
 
+###Property
 * 基本选择器
 * 层次选择器
 * 伪类选择器
 * 伪元素选择器
 * 属性选择器
 
+###Syntax
 ```
 	-基本选择器    ==> ["ID","通配","元素","类"].map((str)=>str+"选择器");
 
@@ -38,10 +40,13 @@
 
 ## Border
 
-	-border-color
-	-border-image
-	-border-radius
-	-box-shadow
+###Property
+* border-color
+* border-image
+* border-radius
+* box-shadow
+
+###Syntax
 
 ```
 	-border-image  ==>
@@ -56,19 +61,22 @@
 
 ##Background 
 
-###CSS2.1
+###Property
+
+####CSS2.1
 * background-color
 * background-image 
 * background-repeat 
 * background-attachment   //背景是否随页面滚动
 * background-position     //背景位置
 
-###CSS3
+####CSS3
 * background-origin  //指定背景图片起点(-position起始参照点)
 * background-clip    //从...裁剪背景图片
 * background-size    //背景图片尺寸大小
 * background-break   //内联元素背景图平铺的循环方式(不常有)
 
+##Syntax
 ```
 	-color : ["#fff","red","rgba()","hls()"]
 	-image : ["ulr()"]
@@ -98,6 +106,7 @@ Text --> Color --> Box --> Flex --> Columns -->
 
 ##Gradient
 
+###Property
 * linear-gradient
 * radial-gradient
 * repeating-linear-gradient
@@ -156,11 +165,13 @@ Text --> Color --> Box --> Flex --> Columns -->
 
 ##Transform
 
+###Property
 * translate
 * rotate
 * scale
 * skew
 
+###Syntax
 ```
 	-translate : translate(标准单位) translateX/Y/Z/3d()
 	-scale : scale(0-1) scaleX/Y/Z/3d()
@@ -218,6 +229,81 @@ Text --> Color --> Box --> Flex --> Columns -->
 
 ##Transition
 
+###Property
+* transition-property
+* transition-duration
+* transition-timing-function
+* transition-delay
+
+###Syntax
+```
+	-transition : [<transition-property> || <transition-duration> || <transition-timing-function> || <transition-delay> [,<transition-property> || <transition-duration> || <transition-timing-function>]*]
+
+	-transition-property : none || all || [与颜色长度有关的属性]
+	-transition-duration : [s,ms]
+	-transition-timing-function : linear || ease ||ease-in-out || cubic-bezier(p0,p1,p2,p3) || step()
+		step() : step(<integer>[,[start|end]]?) step(7, end) //分成七段，动画的结束发现在最后一步。
+
+	-transition-delay : [s,ms]   //因为 duration 和 delay 都是时间，浏览器认为第一个数字是duration，第二个是delay
+```
+
+##Animation
+
+###Property
+* animation-name
+* animation-duration
+* animation-timing-function
+* animation-delay
+* animation-iteration-count
+* animation-direction
+* animation-play-state
+* animation-fill-mode
+* @keyframes
+
+###Syntax
+####Animation-syntax
+```
+	animation : [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction> || <animation-play-state> || <animation-fill-mode>] *
+
+	eg : animation : ani1 2s step(20,end) infinite alternate backwards,...;
+
+---------------------------------------------------------------------------
+	animation-name : none || name  //name 与keyframes的名字一致。
+	animation-duration : [s, ms]   //持续时间
+	animation-timing-function :    //与transition-timing-function一致
+	animation-delay : [s, ms]      //延迟时间
+	animation-iteration-count : infinite || times //无限或者times次
+	animation-direction : normal || alternate     //al : 偶数次向前播放，奇数次向后播放
+  	animation-play-state : running || paused      //暂停或者开始播放
+  	animation-fill-mode : none || forwards || backwards || both  //动画结束回不回到初始帧 
+```
 
 
+
+####keyframes-syntax
+```
+	@keyframes name{
+		from {
+			/* css part*/
+		}
+		to {
+			/* css part*/
+		}
+	}
+	or
+	@kayframes name{
+		0% {
+			/* css part*/
+		}
+		20% {
+			/* css part*/
+		}
+		100% {
+			/* css part*/
+		}
+	} 
+```
+
+
+- 附:
 [正则表达式](http://www.cnblogs.com/deerchao/archive/2006/08/24/zhengzhe30fengzhongjiaocheng.html)
