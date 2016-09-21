@@ -31,7 +31,8 @@
 ```
 
 ##oh-my-zsh
-``` git
+``` 
+    git
         sudo yum install git
     oh-my-zsh
         wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
@@ -42,6 +43,6 @@
     安装 vim 配置
     curl http://j.mp/spf13-vim3 -L -o - | sh
 ```
-> quote
+> 引用
 * [vim 配置 ](http://vim.spf13.com/#install)
 * [oh-my-zsh](http://www.bubuko.com/infodetail-900295.html)
